@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yiğit Alp Tarı</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Karşılama Penceresi (Modal) -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-image">
+                <img src="ai_future_concept_1773262637398.png" alt="Yapay Zeka ve Gelecek">
+            </div>
+            <div class="modal-text">
+                <h3>Yapay Zekanın Geleceği</h3>
+                <p>Yapay zeka, sadece iş yapış şekillerimizi değil, dünyayı algılama biçimimizi de kökünden
+                    değiştiriyor. Gelecekte AI, insan potansiyelini artıran en büyük yardımcı olacak; sanattan eğitime,
+                    otomasyondan sağlığa kadar her alanda devrim yaratacak. Bu dijital çağın sınırlarını keşfetmeye
+                    hazır mısınız?</p>
+                <div class="visitor-counter">
+                    <i class="fa-solid fa-users"></i> Toplam Ziyaretçi: <span id="visitorCount">Yükleniyor...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigasyon Çubuğu -->
+    <nav>
+        <div class="logo">Kurumsal Bilişim Uzmanı</div>
+        <ul class="nav-links">
+            <li><a href="#about">Hakkımda</a></li>
+            <li><a href="egitim.html">Eğitim Geçmişi</a></li>
+            <li><a href="#skills">Yetenekler</a></li>
+            <li><a href="#projects">Projeler</a></li>
+            <li><a href="#contact" class="btn-primary">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <!-- Giriş (Hero) Bölümü -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="greeting">Merhaba, Ben</h2>
+            <h1 class="name">Yaratıcı Bir <br><span class="gradient-text">Geliştiriciyim</span></h1>
+            <p class="description">
+                Fikirleri dijital dünyada hayata geçirmeyi seviyorum. Karmaşık problemleri basit, güzel ve sezgisel
+                tasarımlarla çözmek en büyük tutkum.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">Projelerimi Gör</a>
+                <a href="#contact" class="btn-secondary">Bana Ulaş</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="blob-background"></div>
+            <div class="profile-img-wrapper">
+                <img src="unnamed (2).jpg" alt="Profil Fotoğrafım" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımda Bölümü -->
+    <section class="about" id="about">
+        <h2 class="section-title">Kısaca <span class="gradient-text">Ben</span></h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Tutkulu Kodlayıcı</h3>
+                <p>Temiz, okunabilir ve sürdürülebilir kod yazmaya her zaman özen gösteririm.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Problem Çözücü</h3>
+                <p>Zorluklar beni korkutmaz, aksine yeni şeyler öğrenmem için motive eder.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Sürekli Öğrenci</h3>
+                <p>Teknoloji dünyası hızla değişiyor ve ben de bu hıza ayak uydurmayı seviyorum.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yetenekler Bölümü -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">Kullandığım <span class="gradient-text">Teknolojiler</span></h2>
+        <div class="skills-container">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Yapay Zeka</span>
+            <span class="skill-tag">Bilgisayar Ağları</span>
+            <span class="skill-tag">Python</span>
+        </div>
+    </section>
+
+    <!-- Projeler Bölümü -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Son <span class="gradient-text">Çalışmalarım</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img bg-1"></div>
+                <div class="project-info">
+                    <h3>E-Ticaret Platformu</h3>
+                    <p>Modern bir alışveriş deneyimi sunan, tamamen duyarlı ve hızlı bir e-ticaret uygulaması.</p>
+                    <a href="#" class="project-link">İncele <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img bg-2"></div>
+                <div class="project-info">
+                    <h3>Görev Yöneticisi</h3>
+                    <p>Kullanıcıların günlük işlerini organize etmelerini sağlayan minimalist bir verimlilik aracı.</p>
+                    <a href="#" class="project-link">İncele <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img bg-3"></div>
+                <div class="project-info">
+                    <h3>Hava Durumu Uygulaması</h3>
+                    <p>API entegrasyonu ile gerçek zamanlı hava durumu verilerini gösteren şık bir arayüz.</p>
+                    <a href="#" class="project-link">İncele <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Bölümü -->
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <h2>Birlikte Harika Şeyler <br> <span class="gradient-text">Yaratalım</span></h2>
+            <p>Yeni bir projeniz mi var? Yoksa sadece merhaba mı demek istiyorsunuz? Kahve eşliğinde sohbet etmeye her
+                zaman açığım!</p>
+            <a href="iletisim.html" class="btn-primary">Doldurmak İçin Tıklayın</a>
+            <div class="social-links">
+                <a href="https://instagram.com/yigit.alp28" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tüm hakları saklıdır. Sevgi ve kahve ile yapıldı.</p>
+    </footer>
+
+    <!-- Sayfa Geçiş Animasyonları -->
+    <script src="script.js"></script>
+</body>
+
+</html>

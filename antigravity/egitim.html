@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eğitim Geçmişi | Yiğit Alp Tarı</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .education-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5% 80px;
+        }
+
+        .education-container {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        /* Timeline Çizgisi */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+        }
+
+        /* Eğitim Kartları */
+        .education-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px) translateX(10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Timeline Noktaları */
+        .education-card::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--bg-color);
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            z-index: 1;
+            transition: all 0.3s;
+        }
+
+        .education-card:hover::before {
+            background-color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        .education-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .education-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-title {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .education-card::before {
+                left: -38px;
+                width: 16px;
+                height: 16px;
+                top: 25px;
+            }
+
+            .education-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigasyon Çubuğu -->
+    <nav>
+        <div class="logo">Kurumsal Bilişim Uzmanı</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa'ya Dön</a></li>
+            <li><a href="index.html#contact" class="btn-primary">Geri</a></li>
+        </ul>
+    </nav>
+
+    <!-- Eğitim Geçmişi Bölümü -->
+    <section class="education-section">
+        <div class="education-container">
+            <h2 class="section-title" style="margin-bottom: 4rem;">Eğitim <span class="gradient-text">Geçmişim</span>
+            </h2>
+
+            <div class="timeline">
+                <!-- Üniversite -->
+                <div class="education-card">
+                    <i class="fa-solid fa-graduation-cap education-icon"></i>
+                    <div class="education-date">Devam Ediyor</div>
+                    <h3 class="education-title">Zonguldak Bülent Ecevit Üniversitesi</h3>
+                    <p class="education-desc">Devrek Meslek Yüksekokulu</p>
+                </div>
+
+                <!-- Lise -->
+                <div class="education-card">
+                    <i class="fa-solid fa-school education-icon"></i>
+                    <div class="education-date">2020 - 2024</div>
+                    <h3 class="education-title">Göktürk Ali Rıza Özderici Anadolu Lisesi</h3>
+                    <p class="education-desc">Lise Eğitimi</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tüm hakları saklıdır. Sevgi ve kahve ile yapıldı.</p>
+    </footer>
+
+    <!-- Sayfa Geçiş Animasyonları -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim Formu | Yiğit Alp Tarı</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .form-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 5% 50px;
+        }
+
+        .form-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(123, 44, 191, 0.4) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .form-container::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(247, 37, 133, 0.4) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-color);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(123, 44, 191, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigasyon Çubuğu -->
+    <nav>
+        <div class="logo">Kurumsal Bilişim Uzmanı</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="egitim.html">Eğitim Geçmişi</a></li>
+            <li><a href="index.html#contact" class="btn-primary">Geri</a></li>
+        </ul>
+    </nav>
+
+    <!-- Form Bölümü -->
+    <section class="form-section">
+        <div class="form-container">
+            <h2 class="section-title" style="margin-bottom: 2rem; font-size: 2rem;">İletişim <span
+                    class="gradient-text">Formu</span></h2>
+            <form action="https://formsubmit.co/tariyigitalp@gmail.com" method="POST" id="contactForm">
+                <!-- Güvenlik ve Yönlendirme Ayarları (Opsiyonel) -->
+                <input type="hidden" name="_subject" value="Web Sitenizden Yeni İletişim Mesajı!">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-group">
+                    <label for="name">Adınız Soyadınız</label>
+                    <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Posta Adresiniz</label>
+                    <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon Numaranız</label>
+                    <input type="tel" id="phone" name="phone" placeholder="0555 555 55 55">
+                </div>
+                <div class="form-group">
+                    <label for="message">Açıklama</label>
+                    <textarea id="message" name="message" required placeholder="Mesajınızı buraya yazın..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary submit-btn" id="submitBtn">Gönder</button>
+                <div id="formMessage"
+                    style="display: none; margin-top: 15px; font-weight: 600; color: #4ade80; text-align: center;">
+                    Mesajınız başarıyla gönderildi!</div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tüm hakları saklıdır. Sevgi ve kahve ile yapıldı.</p>
+    </footer>
+
+    <!-- Form Gönderimi için JavaScript -->
+    <script>
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Sayfa yenilenmesini / yönlendirmesini engeller
+
+            // Butonu gönderiliyor durumuna getir
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gönderiliyor...';
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.cursor = 'not-allowed';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Başarılı olduğunda
+                        form.reset();
+                        formMessage.style.display = 'block';
+                        formMessage.style.color = '#4ade80';
+                        formMessage.innerHTML = 'Mesajınız başarıyla gönderildi!';
+                    } else {
+                        // Hata durumunda
+                        formMessage.style.display = 'block';
+                        formMessage.style.color = '#ef4444';
+                        formMessage.innerHTML = 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
+                    }
+                })
+                .catch(error => {
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = '#ef4444';
+                    formMessage.innerHTML = 'Bağlantı hatası! Lütfen internetinizi kontrol edin.';
+                })
+                .finally(() => {
+                    // İşlem bitince butonu eski haline getir
+                    submitBtn.innerHTML = 'Gönder';
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.cursor = 'pointer';
+                    submitBtn.disabled = false;
+
+                    // Mesajı 5 saniye sonra gizle
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                });
+        });
+    </script>
+
+    <!-- Sayfa Geçiş Animasyonları -->
+    <script src="script.js"></script>
+</body>
+
+</html>
